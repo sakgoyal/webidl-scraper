@@ -7,13 +7,13 @@ Scrape IDL definitions from Web standard specs
 Download node at [nodejs.org](http://nodejs.org) and install it, if you haven't already.
 
 ```sh
-npm install -g webidl-scraper
+bun install -g @sakgoyal/webidl-scraper
 ```
 
 ## Usage
 
 ```
-  webidl-scraper [options] <inputs: file | URL | "-" ...> (use - for stdin)
+  webidl-scraper [options] <inputs: URL ...>
 
   Scrape IDL definitions from Web standard specs.
 
@@ -107,20 +107,9 @@ npm test
 ## Dependencies
 
 - [commander](https://github.com/tj/commander.js): the complete solution for node.js command-line programs
-- [glob](https://github.com/isaacs/node-glob): a little globber
 - [htmlparser2](https://github.com/fb55/htmlparser2): Fast &amp; forgiving HTML/XML/RSS parser
-- [request](https://github.com/request/request): Simplified HTTP request client.
-- [rx](https://github.com/Reactive-Extensions/RxJS): Library for composing asynchronous and event-based operations in JavaScript
 
 ## Dev Dependencies
-
-- [chai](https://github.com/chaijs/chai): BDD/TDD assertion library for node.js and the browser. Test framework agnostic.
-- [find-port](https://github.com/kessler/find-port): find an unused port in your localhost
-- [mocha](https://github.com/mochajs/mocha): simple, flexible, fun test framework
-- [node-static](https://github.com/cloudhead/node-static): simple, compliant file streaming module for node
-- [rx-node](https://github.com/Reactive-Extensions/rx-node): RxJS Bindings for Node.js and io.js
-- [temp](https://github.com/bruce/node-temp): Temporary files and directories
-
 
 ## License
 
