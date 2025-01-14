@@ -22,6 +22,7 @@ export class IdlScraper extends Writable {
 	#inIDL;
 	#seenIdlIndex;
 	#parser;
+	/** Get output IDL from this buffer. ready once `.end()` is called (I think) */
 	buffer = "";
 
 	constructor(options: Options = {}) {
@@ -72,6 +73,9 @@ export class IdlScraper extends Writable {
 			this.#inIDL = false;
 		}
 	}
+	/**
+	 * @internal
+	 */
 	// deno-lint-ignore no-explicit-any
 	override _write(chunk: string, _: any, done: any) {
 		try {

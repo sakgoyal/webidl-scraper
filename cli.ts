@@ -1,6 +1,12 @@
 // import { Command } from "npm:commander";
 import { IdlScraper } from "./lib/scraper.ts";
 // import version from "./package.json" with { type: "json" };
+
+
+/**
+ * Function to parse CLI arguments and then execute the parser and output to `stdout`.
+ * Will switch to using Commander package soon
+ */
 export async function scraperCli() {
 	// let options = {
 	//     argv: process.argv,
