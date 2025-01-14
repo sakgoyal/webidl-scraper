@@ -23,17 +23,11 @@ export async function scraperCli() {
 	// 	.option("--with-data-no-idl", "do not ignore <pre data-no-idl />")
 	// 	.option("--with-idl-index", 'do not ignore IDL after id="idl-index"')
 	// 	.parse(Deno.args).opts();
-
-	let buff = "";
-	const scraper = new IdlScraper({ withClassExtract: true }, (err, text) => {
-		if (err) throw err;
-		buff += text;
-	});
-
+	const scraper = new IdlScraper({ withClassExtract: true });
 	const InputText = await (await fetch(Deno.args[0])).text();
 	scraper.write(InputText);
 	scraper.end();
-	console.log(buff);
+	console.log(scraper.buffer);
 }
 
 scraperCli();

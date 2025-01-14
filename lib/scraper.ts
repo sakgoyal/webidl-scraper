@@ -1,25 +1,32 @@
 import { Parser } from "npm:htmlparser2@10.0.0";
 import { Writable } from "node:stream";
 
+/** Options to pass in */
 export type Options = {
 	withIdlIndex?: boolean;
 	withDataNoIdl?: boolean;
 	withClassExtract?: boolean;
 };
 
-export type CallbackType = (err: unknown, text: string) => void;
-
+/**
+ * IDL Scraper Instance
+ * @example
+ * const scraper = new IdlScraper({ withClassExtract: true });
+ * const InputText = await (await fetch("http://dev.w3.org/csswg/cssom/")).text();
+ * scraper.write(InputText);
+ * scraper.end();
+ * console.log(scraper.buffer);
+ */
 export class IdlScraper extends Writable {
 	#options: Options;
-	#cb;
 	#inIDL;
 	#seenIdlIndex;
 	#parser;
+	buffer = "";
 
-	constructor(options: Options = {}, cb: CallbackType = (_e, _t) => {}) {
+	constructor(options: Options = {}) {
 		super({ decodeStrings: false });
 		this.#options = options;
-		this.#cb = cb;
 		this.#inIDL = false;
 		this.#seenIdlIndex = false;
 		this.#parser = new Parser({
@@ -52,7 +59,7 @@ export class IdlScraper extends Writable {
 	// Handler for text content
 	#onText(text: string) {
 		if (this.#inIDL && !this.#seenIdlIndex) {
-			this.#cb(null, text);
+			this.buffer += text;
 		}
 	}
 
@@ -60,7 +67,7 @@ export class IdlScraper extends Writable {
 	#onCloseTag(tagName: string) {
 		if (tagName === "pre") {
 			if (this.#inIDL && !this.#seenIdlIndex) {
-				this.#cb(null, "\n\n");
+				this.buffer += "\n\n";
 			}
 			this.#inIDL = false;
 		}
