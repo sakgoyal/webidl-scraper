@@ -1,10 +1,8 @@
-# webidl-scraper [![Build Status](https://travis-ci.org/motiz88/webidl-scraper.png?branch=master)](https://travis-ci.org/motiz88/webidl-scraper)
+# webidl-scraper
 
 Scrape IDL definitions from Web standard specs
 
 ## Installation
-
-Download node at [nodejs.org](http://nodejs.org) and install it, if you haven't already.
 
 ```sh
 deno install -g @sakgoyal/webidl-scraper
@@ -41,7 +39,7 @@ curl -sL http://dev.w3.org/csswg/cssom/ | webidl-scraper - > cssom.idl
 # Use curl for HTTP and redirect stdout to cssom.idl
 ```
 Scrape an HTML file for IDL fragments:
-```
+```sh
 webidl-scraper html5-spec.html -o html5-spec.idl
 ```
 ## Scraping algorithm
@@ -57,7 +55,7 @@ These steps are derived experimentally and may change. I have tried to include l
 npm install
 npm test
 ```
-```
+```sh
   Scraper CLI
     fixtures/html/*.html
       cssom-with-class-extract.html [--with-class-extract]
@@ -103,15 +101,3 @@ npm test
         √ should match noidl.idl
   19 passing (2s)
 ```
-
-## Dependencies
-
-- [commander](https://github.com/tj/commander.js): the complete solution for node.js command-line programs
-- [htmlparser2](https://github.com/fb55/htmlparser2): Fast &amp; forgiving HTML/XML/RSS parser
-
-## Dev Dependencies
-
-## License
-
-MIT
-
