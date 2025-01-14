@@ -1,0 +1,32 @@
+{
+	"name": "@sakgoyal/webidl-scraper",
+	"version": "1.0.0",
+	"description": "Scrape IDL definitions from Web standard specs",
+	"license": "MIT",
+	"exports": "./index.ts",
+	"bin": {
+		"webidl-scraper": "cli.ts"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/sakgoyal/webidl-scraper.git"
+	},
+	"keywords": [
+		"webidl",
+		"w3c",
+		"scrape",
+		"idl"
+	],
+	"imports": {
+		// "@types/node" : "npm:@types/node@latest"
+		// "webidl2" : "npm:webidl2@latest"
+	},
+	"compilerOptions": {
+		"strict": true
+	},
+	"fmt": {
+		"lineWidth": 999,
+		"useTabs": true,
+		"semiColons": true
+	}
+}

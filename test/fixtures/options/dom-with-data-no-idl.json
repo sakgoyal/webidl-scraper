@@ -1,4 +1,0 @@
-{
-	"scraper-core": {"withDataNoIdl": true},
-	"cli": ["--with-data-no-idl"]
-}

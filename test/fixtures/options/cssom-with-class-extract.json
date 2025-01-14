@@ -1,4 +1,0 @@
-{
-	"scraper-core": {"withClassExtract": true},
-	"cli": ["--with-class-extract"]
-}
