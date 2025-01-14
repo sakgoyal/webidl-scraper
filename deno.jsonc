@@ -1,15 +1,10 @@
 {
 	"name": "@sakgoyal/webidl-scraper",
-	"version": "1.0.0",
-	"description": "Scrape IDL definitions from Web standard specs",
+	"version": "1.0.1",
 	"license": "MIT",
 	"exports": "./index.ts",
 	"bin": {
 		"webidl-scraper": "cli.ts"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/sakgoyal/webidl-scraper.git"
 	},
 	"keywords": [
 		"webidl",
