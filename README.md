@@ -7,7 +7,7 @@ Scrape IDL definitions from Web standard specs
 Download node at [nodejs.org](http://nodejs.org) and install it, if you haven't already.
 
 ```sh
-bun install -g @sakgoyal/webidl-scraper
+deno install -g @sakgoyal/webidl-scraper
 ```
 
 ## Usage
