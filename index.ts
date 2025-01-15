@@ -1,2 +1,3 @@
-export * from "./lib/scraper.ts";
-export * from "./cli.ts";
+import { scraperCli } from "./cli.ts";
+
+scraperCli();

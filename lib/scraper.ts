@@ -1,10 +1,13 @@
 import { Parser } from "npm:htmlparser2@10.0.0";
 import { Writable } from "node:stream";
 
-/** Options to pass in */
+/** Options to pass in to scraper */
 export type Options = {
+	/** do not ignore IDL after `id="idl-index"` */
 	withIdlIndex?: boolean;
+	/** do not ignore `<pre data-no-idl />` */
 	withDataNoIdl?: boolean;
+	/** do not ignore `<pre class="idl extract" />` */
 	withClassExtract?: boolean;
 };
 

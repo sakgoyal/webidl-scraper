@@ -1,7 +1,20 @@
 {
   "version": "4",
   "specifiers": {
+    "jsr:@podhmo/with-help@0.5.3": "0.5.3",
+    "jsr:@std/cli@1": "1.0.10",
     "npm:htmlparser2@10.0.0": "10.0.0"
+  },
+  "jsr": {
+    "@podhmo/with-help@0.5.3": {
+      "integrity": "19bec7430a2bd874cf2141e7c626f8f46ff1bcf7cbe09a0d3c1eef07522592d0",
+      "dependencies": [
+        "jsr:@std/cli"
+      ]
+    },
+    "@std/cli@1.0.10": {
+      "integrity": "d047f6f4954a5c2827fe0963765ddd3d8b6cc7b7518682842645b95f571539dc"
+    }
   },
   "npm": {
     "dom-serializer@2.0.0": {
